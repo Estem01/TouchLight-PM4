@@ -1,0 +1,12 @@
+---
+name: TouchLight-PM4
+version: 2.0.0
+main: HenryDM\TouchLight\Main
+api: [4.0.0]
+description: Simple plugin to light redstone lamps with one touch 
+authors: [HenryDM, DANIHEX]
+website: https://github.com/Henry12960
+...
+
+
+
