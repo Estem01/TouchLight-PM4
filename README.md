@@ -1,6 +1,6 @@
 
 
-# TouchLight-PN4
+# TouchLight-PM4
 Simple plugin to light redstone lamps with one click!
 
 ## Category
