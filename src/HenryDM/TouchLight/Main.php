@@ -13,21 +13,20 @@ use pocketmine\block\BlockFactory;
 
 class Main extends PluginBase implements Listener {
 
-    public function onEnable() : void 
-    {
+    public function onEnable() : void {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
     }
 
-    public function onPlayerInteract(PlayerInteractEvent $event){
+    public function onPlayerInteract(PlayerInteractEvent $event) {
         $block = $event->getBlock();
-        if($event->getAction() === PlayerInteractEvent::RIGHT_CLICK_BLOCK){
-            switch($block->getId()){
+        if ($event->getAction() === PlayerInteractEvent::RIGHT_CLICK_BLOCK) {
+            switch ($block->getId()) {
                 case 123:
-                    $block->getWorldManager()->getWorld($block->getPosition()->asVector3(), BlockFactory::getInstance()->get(124, 0));
-                break;
+                    $block->getPosition()->getWorld($block->getPosition()->asVector3(), BlockFactory::getInstance()->get(124, 0));
+                    break;
                 case 124:
-                    $block->getWorldManager()->getWorld($block->getPosition()->asVector3(), BlockFactory::getInstance()->get(123, 0));
-                break;
+                    $block->getPosition()->getWorld($block->getPosition()->asVector3(), BlockFactory::getInstance()->get(123, 0));
+                    break;
             }
         }
     }
