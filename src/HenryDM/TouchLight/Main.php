@@ -9,11 +9,12 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\block\Block;
+use pocketmine\world\World;
 
 class Main extends PluginBase implements Listener {
 
     public function onEnable() : void 
-	{
+    {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
     }
 
