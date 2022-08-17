@@ -22,10 +22,10 @@ class Main extends PluginBase implements Listener {
         if($event->getAction() === PlayerInteractEvent::RIGHT_CLICK_BLOCK){
             switch($block->getId()){
                 case 123:
-                    $block->setBlock($block->getPosition()->asVector3(), Block::get(124));
+                    $block->getBlock()->setBlock($block->getPosition()->asVector3(), Block::get(124));
                 break;
                 case 124:
-                    $block->setBlock($block->getPosition()->asVector3(), Block::get(123));
+                    $block->getBlock()->setBlock($block->getPosition()->asVector3(), Block::get(123));
                 break;
             }
         }
