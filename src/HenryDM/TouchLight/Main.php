@@ -9,6 +9,7 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\block\Block;
+use pocketmine\block\BlockFactory;
 
 class Main extends PluginBase implements Listener {
 
@@ -22,21 +23,12 @@ class Main extends PluginBase implements Listener {
         if($event->getAction() === PlayerInteractEvent::RIGHT_CLICK_BLOCK){
             switch($block->getId()){
                 case 123:
-                    $block->getBlock()->setBlock($block->getPosition()->asVector3(), Block::get(124));
+                    $block->setBlock($block->getPosition()->asVector3(), BlockFactory::getInstance()->get(124, 0));
                 break;
                 case 124:
-                    $block->getBlock()->setBlock($block->getPosition()->asVector3(), Block::get(123));
+                    $block->setBlock($block->getPosition()->asVector3(), BlockFactory::getInstance()->get(123, 0));
                 break;
             }
         }
     }
-
 }
-
-
-
-
-
-
-
-
